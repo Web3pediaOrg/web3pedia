@@ -80,16 +80,10 @@ export default function Account() {
       github_link:github_link,
       uid:auth.currentUser.uid
     }).then (
-      updateProfile(auth.currentUser, {
-        displayName: username
-      }).then(() => {
-        alert("Changes Saved!"),
-        // router.reload()
-        router.push("/user/"+username)
-      }).catch((error) => {
-        alert("Error Updating Your Profile.")
-      })
-    );
+      router.push("/user/"+username)   
+    ).catch((error) => {
+      alert("Error Updating Your Profile.")
+    });
 
   }
 
@@ -139,7 +133,7 @@ export default function Account() {
           <input type="text" className='account-input' id='location'></input><br></br>
 
           <label style={{"fontWeight":"500","color":"#22222F"}}>Website</label><br></br> 
-          <input type="text" className='account-input' id='website'></input><br></br>
+          <input type="text" className='account-input' id='website' placeholder='eg. web3pedia.vercel.app'></input><br></br>
           <br></br>
           <label style={{"fontSize":"20px","fontWeight":"500","color":"#22222F"}}>Social Links</label><br></br> 
           <br></br>
