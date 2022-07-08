@@ -1,0 +1,22 @@
+.settings-main {
+    margin: auto;
+    width: 55%;
+}
+
+.settings-content {
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    padding: 10px;
+    /* box-shadow: 2px 5px 10px 5px #e6e6e6; */
+}
+
+.account-input {
+    padding: 13px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 90%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}

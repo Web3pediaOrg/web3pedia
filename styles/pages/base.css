@@ -1,0 +1,227 @@
+/* body { */
+  /* background-image: linear-gradient(to bottom, hsl(0, 0%, 99%),white); */
+  /* background-color: hsl(0, 0%, 99%); */
+/* } */
+
+.main-header-2 {
+    text-align: center;
+}
+
+.main-2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    width: 65%;
+}
+
+@media only screen and (max-width: 1050px) {
+  .main-2 {
+    width: 90%;
+  }
+}
+
+.header-2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.subheading-2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6B7280;
+    font-size: 15px;
+    /* font-weight: 600; */
+}
+
+
+.topnav {
+    overflow: hidden;
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,.2);
+    background-color: white;
+    /* background-color: #f2f2f2; */
+    /* background-color: hsl(0, 0%, 7.5%); */
+  }
+  
+  .topnav a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 22px;
+  }
+  
+  .topnav-right {
+    float: right;
+    margin-right: 35px;
+  }
+
+  .topnav-right a {
+    color: #6B7280;
+    font-size: 17px;
+  }
+
+.nav-logo {
+    color: black;
+    font-weight: 600;
+}  
+
+.hr-2 {
+    border: 0.5px solid #262626
+}
+
+.cat-block {
+    /* border: 1px solid black; */
+    padding: 8px 5px 8px 5px;
+    border-radius: 5px;
+}
+
+.cat-head {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.get-started-btn {
+    text-align: center;
+}
+.get-started-btn a {
+    background-image: linear-gradient(to right,#cc2b5e,#753a88);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.get-started-btn a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+  
+  .b-link:hover {
+    text-decoration: underline;
+  }
+
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #553c9a;
+}
+
+::selection {
+    color: white;
+    background: #553c9a;
+}  
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: #6B7280;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px;
+    border-radius: 5px;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  .topnav .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 719px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .topnav-right {
+      float: left;
+    }
+  }
+
+.drop-subsection {
+  border-top: 1px solid #e6e6e6;
+}  
+.drop-subsection a{
+  font-size: 14px;
+  padding: 9px;
+}  
+
+.drop-subsection button{
+  font-size: 14px;
+  padding: 9px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}  
+
+.drop-subsection button:hover {
+  background-color: #ddd;
+}
+
+
+.drop-content-2 {
+  border-bottom: 1px solid #e6e6e6;
+}
+/* https://digitalsynopsis.com/design/beautiful-color-ui-gradients-backgrounds/ */

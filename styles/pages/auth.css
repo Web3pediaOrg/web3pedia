@@ -1,0 +1,66 @@
+.auth-div {
+    margin: auto;
+    width: 50%;
+}
+
+
+.login-block input{
+    width: 70%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #6B7280;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 670px) {
+    .auth-div {
+      width: 80%;
+      margin: auto;
+    }
+    .login-block input {
+        width: 100%;
+    }
+  }
+
+
+.auth-btn {
+    background-image: linear-gradient(to right,#cc2b5e,#753a88);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.auth-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.auth-btn-2 {
+    border: 1px solid #0080ff;
+    border-radius: 5px;
+    background-color: #0080ff;
+    color: white;
+    padding: 7px 15px 7px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.auth-btn-3 {
+    border: 1px solid #2eb82e;
+    border-radius: 5px;
+    background-color:#2eb82e;
+    color: white;
+    padding: 7px 15px 7px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
