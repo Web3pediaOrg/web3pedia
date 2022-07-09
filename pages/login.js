@@ -50,7 +50,7 @@ export default function Login() {
      <Head>
         <title>Login | Web3pedia</title>
         <meta name="description" content="Helping People With Web3" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Base></Base>
       <br></br>
@@ -62,7 +62,7 @@ export default function Login() {
       <div className='auth-div'>
         <h2>Login</h2>
         <div className='login-block'>
-          <form onSubmit={LoginUser}>
+          <form onSubmit={LoginUser} autoComplete="off">
             <label className='auth-label'>Email</label>
             <input type="email" id='email'></input><br></br>
 

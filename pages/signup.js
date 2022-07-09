@@ -16,36 +16,6 @@ export default function SignUp() {
 
     }
   });
-
-  // function createUserAccount(e) {
-  //   e.preventDefault()
-
-  //   const email = document.getElementById("email").value;
-  //   const re_email = document.getElementById("re-email").value;
-  //   const password = document.getElementById("password").value;
-    
-  //   if (email == re_email){
-  //     createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       updateProfile(auth.currentUser, {
-  //         displayName: email.split("@")[0]
-  //       }).then(() => {
-  //         sendEmailVerification(auth.currentUser)
-  //         .then(() => {
-  //           router.push('/dashboard')
-  //         });
-  //       }).catch((error) => {});
-        
-  //     })
-  //     .catch((error) => {
-  //       alert("Error Creating Your Account. Try Again Later.")
-  //     });
-  //   } 
-  //   else {
-  //     alert("The two emails don't match")
-  //   }
-  
-  // }
   
   function createUserAccount(e) {
     e.preventDefault()
@@ -78,7 +48,7 @@ export default function SignUp() {
      <Head>
         <title>Sign Up | Web3pedia</title>
         <meta name="description" content="Helping People With Web3" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Base></Base>
       <br></br>
@@ -90,11 +60,10 @@ export default function SignUp() {
       <div className='auth-div'>
         <div className='welcome-msg'>
           <span style={{"fontSize":"25px","fontWeight":"500"}}>Create Account</span><br></br>
-          {/* <span style={{"fontSize":"18px"}}>Let’s begin your Web3 Journey</span> */}
         </div>
         <br></br>
         <div className='login-block'>
-          <form onSubmit={createUserAccount}>
+          <form onSubmit={createUserAccount} autoComplete="off">
             <label className='auth-label'>Email</label>
             <input type="email" id='email' required></input><br></br>
 

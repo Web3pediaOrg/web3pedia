@@ -62,7 +62,7 @@ export default function AddEvent() {
           <div className='add-event' id='event'>
             <h2 style={{"color":"#595959"}}>Event</h2>
 
-            <form onSubmit={AddEvent}>
+            <form onSubmit={AddEvent} autoComplete="off">
               <label>Title</label><br></br>
               <input type="text" id='title'></input><br></br>
 

@@ -20,7 +20,7 @@ export default function About() {
       <br></br>
       <br></br>
       <div className='about-content'> 
-        <p>Web3pedia, built-in 2022, is a one-stop-shop for all queries related to web3. Our mission is to make Web3 more easier by providing people everything at one place.</p>
+        <p>Web3pedia, built-in 2022, is a one-stop-shop for all queries related to web3. Our mission is to make Web3 more easier by providing people everything about web3 at one place.</p>
         
         <h2>💡 Behind The Idea</h2>
         <p>With a keen interest in exploring emerging technologies, I (<Link href="/user/SohamSaoji"><a className='b-link'>Soham Saoji</a></Link>) came across the concept of Web3. Out of curiosity, I started digging up more about this technology and got intrigued about its applications. I thought of sharing my learnings about this technology with my friends by creating a DAO and helping them understand the creation of a wallet, its connection and usage.</p>

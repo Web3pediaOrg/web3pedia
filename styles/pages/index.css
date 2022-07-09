@@ -77,3 +77,25 @@ li {
         width: 100%;
     }
   }
+
+  .alert {
+    background-color: #F2E5FF;
+    color: #3A0074;
+    padding: 7px;
+    text-align: center;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: #3A0074;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }  

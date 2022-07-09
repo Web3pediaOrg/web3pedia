@@ -10,6 +10,7 @@ export const getStaticProps = async () => {
     props: {
       data,
     },
+    revalidate: 43200,
     
   };
 };
@@ -21,7 +22,7 @@ const News = ( {data} ) => {
      <Head>
         <title>Web3pedia News</title>
         <meta name="description" content="Helping People With Web3" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
     <Base></Base>

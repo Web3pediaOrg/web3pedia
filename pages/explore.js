@@ -123,7 +123,7 @@ export default function Explore() {
      <Head>
         <title>Web3pedia Explore</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" src={logo} />
+        <link rel="icon" href="/favicon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
       <div className="explore-topnav" id='myTopnav'>
@@ -163,7 +163,7 @@ export default function Explore() {
         <div className='autocomplete'>
           <div className='explore-search'>
             <i className="fa fa-search"></i>&nbsp;
-            <input type="text" id="myInput" onChange={() => autocomplete(document.getElementById("myInput"), countries,page_links)} placeholder="Search Explore"></input>
+            <input type="text" id="myInput" autoComplete='off' onChange={() => autocomplete(document.getElementById("myInput"), countries,page_links)} placeholder="Search Explore"></input>
           </div>
         </div>
         <br></br>

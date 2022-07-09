@@ -31,7 +31,7 @@ export default function PasswordResetLink() {
      <Head>
         <title>Password reset | Web3pedia</title>
         <meta name="description" content="Helping People With Web3" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Base></Base>
       <br></br>

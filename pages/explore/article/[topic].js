@@ -19,7 +19,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const res = await fetch("https://web3pediaorg.github.io/web3/api/explore/articles/"+params.topic+".json");
 
-  const data_content = []
 
   try {
     const data = await res.json();
@@ -27,6 +26,7 @@ export async function getStaticProps({ params }) {
       props: {
         data,
       },
+      revalidate: 2630000,
       
     };
   } catch(err) {

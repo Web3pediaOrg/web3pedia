@@ -61,7 +61,7 @@ export default function AddCourses() {
           <div className='add-event' id='event'>
             <h2 style={{"color":"#595959"}}>Courses</h2>
 
-            <form onSubmit={AddCourse}>
+            <form onSubmit={AddCourse} autoComplete="off">
               <label>Title</label><br></br>
               <input type="text" id='title'></input><br></br>
 

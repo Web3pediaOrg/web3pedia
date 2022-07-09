@@ -8,7 +8,7 @@ export default function Docs() {
      <Head>
         <title>Web3pedia Documentation</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="./public/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <DocsBase></DocsBase>
       <div className='docs-main'>

@@ -23,6 +23,7 @@ export async function getStaticProps({ params }){
           data,
           data_status,
         },
+        revalidate: 1800,
         
       };
     }

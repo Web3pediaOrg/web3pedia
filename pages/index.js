@@ -12,6 +12,7 @@ export const getStaticProps = async () => {
     props: {
       data,
     },
+    revalidate: 86400,
     
   };
 };
@@ -24,9 +25,13 @@ const Home = ( {data} ) => {
      <Head>
         <title>Web3pedia</title>
         <meta name="description" content="Helping People With Web3" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Base></Base>
+      <div className="alert" id='alert'>
+        <span className="closebtn" onClick={() => document.getElementById("alert").style.display='none'}>&times;</span> 
+        <strong><Link href="/signup">Sign Up</Link></strong>&nbsp;🚀 To create your <Link href="/user/Web3pedia"><a style={{"fontWeight":"500"}}>Web3pedia</a></Link> profile!
+      </div>
       <br></br>
       <div className='main-header-2'>
         <span className='header-2'>Web3pedia</span><br></br>
@@ -43,7 +48,7 @@ const Home = ( {data} ) => {
           <div className='content-block'>
           <p>&nbsp;Here&apos;s <b>Web3pedia</b> to help you!</p>
           <p>Web3pedia, built-in 2022, is a one-stop-shop for all queries related to <Link href="/explore/articles/web3"><a className="b-link">Web3</a></Link>.
-          Our mission is to make Web3 more easier by providing people everything in one place.&nbsp;<Link href="/about"><a className='b-link'>Read More</a></Link>
+          Our mission is to make Web3 more easier by providing people everything about web3 in one place.&nbsp;<Link href="/about"><a className='b-link'>Read More</a></Link>
           </p>     
           <div className='get-started-btn'>
             {user ?<><Link href='/dashboard'><a>Go to Dashboard 🚀</a></Link></>:<><Link href='/signup'><a>Get Started 🚀</a></Link></>}
@@ -94,8 +99,9 @@ const Home = ( {data} ) => {
               <span className='quick-head'>Latest Articles</span>
               <ul>
               {data.latest.map((article) => {
-                return  (
-                  <li key={article.topic}><a href={article.url}>{article.topic}</a></li>  
+                return  ( 
+                  <li key={article.id}><Link href={"/explore/article/"+article.id}>{article.topic}</Link></li>  
+                  
                 )})}
               </ul>
               <Link href='/explore/articles'><a className='b-link'>View More</a></Link>
@@ -118,3 +124,4 @@ const Home = ( {data} ) => {
 }
 
 export default Home
+

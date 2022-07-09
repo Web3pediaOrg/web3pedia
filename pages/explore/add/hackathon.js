@@ -60,7 +60,7 @@ export default function AddHackathonPage() {
         <div className='add-form'>
           <div className='add-hackathon' id='add-hackathon'>
             <h2 style={{"color":"#595959"}}>Hackathon</h2>
-            <form onSubmit={AddHackathon}>
+            <form onSubmit={AddHackathon} autoComplete="off">
               <label>Title</label><br></br>
               <input type="text" id="title"></input><br></br>
 

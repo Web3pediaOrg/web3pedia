@@ -10,6 +10,7 @@ export const getStaticProps = async () => {
     props: {
       data,
     },
+    revalidate: 86400,
     
   };
 };
@@ -34,7 +35,7 @@ const ExploreArticles = ( {data} ) => {
         {data.latest.map((article) => {
           return (
             <>
-            <Link href={article.url} key={article.id}><a className="b-link">{article.topic}</a></Link><br></br>
+            <Link href={"/explore/article/"+article.id} key={article.id}><a className="b-link">{article.topic}</a></Link><br></br>
             </>
           )
         })}
@@ -45,7 +46,7 @@ const ExploreArticles = ( {data} ) => {
         {data.articles.map((article) => {
           return (
             <>
-            <Link href={article.url} key={article.id}><a className="b-link">{article.topic}</a></Link><br></br>
+            <Link href={"/explore/article/"+article.id} key={article.id}><a className="b-link">{article.topic}</a></Link><br></br>
             </>
           )
         })}

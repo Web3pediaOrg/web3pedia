@@ -119,7 +119,7 @@ export default function Account() {
       <br></br>
       <span style={{"fontWeight":"500","color":"#22222F"}}>Registered email</span><br></br>{user.email} 
       {/* &#x2717; */}
-        <form style={{"marginTop":"15px"}} onSubmit={updateUserProfile}>
+        <form style={{"marginTop":"15px"}} onSubmit={updateUserProfile} autoComplete="off">
           <label style={{"fontWeight":"500","color":"#22222F"}}>Display name</label><br></br> 
           <input type="text" className='account-input' id="display-name"></input><br></br>
 
