@@ -12,7 +12,10 @@
     margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 900px) {
+    .news-page-content {
+        width: 90%;
+    }
     .news-content-block {
         width: 100%;
     }

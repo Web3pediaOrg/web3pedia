@@ -29,7 +29,7 @@ export default function Base() {
     <>
      <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="./public/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
       <div className="topnav" id='myTopnav'>

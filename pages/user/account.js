@@ -4,7 +4,7 @@ import { auth } from '../../components/config/fireb'
 import { updateProfile,sendEmailVerification } from 'firebase/auth'
 import Base from '../../components/base'
 import { useRouter } from 'next/router'
-import { ref,set,get,child } from "firebase/database";
+import { ref,set,get,child,push } from "firebase/database";
 import { userdatabase } from '../../components/config/fireb-2'
 import { useEffect,useState } from 'react';
 
@@ -70,7 +70,7 @@ export default function Account() {
     const github_link = document.getElementById("github").value;
 
 
-    set(ref(userdatabase, "/user/"+username.toLowerCase()), {
+    set(ref(userdatabase, "/user/"+username.toLowerCase()+"/profile"), {
       display_name:display_name,
       username:username,
       about:about,
@@ -93,6 +93,34 @@ export default function Account() {
       alert("Email verfication link send to "+auth.currentUser.email)
     });
   }
+
+// When the user clicks the button, open the modal 
+function displayModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function hideModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+function addWeb3Project(e) {
+  e.preventDefault()
+
+  const project_name = document.getElementById("project-name").value;
+  const project_url = document.getElementById("project-url").value;
+
+  push(ref(userdatabase, "/user/"+user.displayName.toLowerCase()+"/projects"), {
+    name:project_name,
+    url:project_url
+  }).then (
+    router.push("/user/"+user.displayName)   
+  ).catch((error) => {
+    alert("Error Updating Your Profile.")
+  });
+}
 
   if (canRender) {
     if (user.displayName != undefined) {
@@ -141,10 +169,29 @@ export default function Account() {
           <input type="text" className='account-input' id='twitter' placeholder='Username'></input><br></br>
           <label style={{"fontWeight":"500","color":"#22222F"}}>Github</label><br></br>
           <input type="text" className='account-input' id='github' placeholder='Username'></input><br></br>
-          
           <br></br>
           <button type='submit' className='auth-btn'>Save Changes</button>
         </form>
+        <br></br>
+        <br></br>
+        <label style={{"fontSize":"20px","fontWeight":"500","color":"#22222F"}}>Web3 Projects</label><br></br> 
+        <button className='auth-btn-2' id="myBtn" onClick={() => displayModal()} style={{"marginTop":"15px"}}>Add Project</button>
+        <div id="myModal" className="modal">
+          <div className="profile-modal-content">
+            <span className="close" onClick={() => hideModal()}>&times;</span>
+            <p style={{"fontSize":"25px","fontWeight":"500"}}>Add Web3 Project</p>
+
+            <form onSubmit={addWeb3Project}>
+              <label style={{"fontWeight":"500","color":"#22222F"}}>Name</label><br></br>
+              <input type="text" className='account-input' id='project-name'></input><br></br>
+
+              <label style={{"fontWeight":"500","color":"#22222F"}}>URL</label><br></br>
+            <input type="link" className='account-input' id='project-url' placeholder='eg. web3pedia.vercel.app'></input><br></br>
+            <br></br>
+            <button className='auth-btn-2' type='submit'>Add Project</button>
+          </form>
+          </div>
+        </div>
       </div>
       </div>
       <br></br>

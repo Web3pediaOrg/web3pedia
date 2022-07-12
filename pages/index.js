@@ -28,10 +28,21 @@ const Home = ( {data} ) => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Base></Base>
-      <div className="alert" id='alert'>
-        <span className="closebtn" onClick={() => document.getElementById("alert").style.display='none'}>&times;</span> 
-        <strong><Link href="/signup">Sign Up</Link></strong>&nbsp;🚀 To create your <Link href="/user/Web3pedia"><a style={{"fontWeight":"500"}}>Web3pedia</a></Link> profile!
-      </div>
+      {user ? <>
+        {user.displayName === undefined ? <>
+          <div className="alert" id='alert'>
+          <span className="closebtn" onClick={() => document.getElementById("alert").style.display='none'}>&times;</span> 
+          <Link href="/user/account"><a><b>Create</b></a></Link>&nbsp;🚀 <Link href="/user/Web3pedia"><a style={{"fontWeight":"500"}}>Web3pedia</a></Link> profile!
+        </div>
+       </>:<></>}
+      </>:
+      <>
+        <div className="alert" id='alert'>
+          <span className="closebtn" onClick={() => document.getElementById("alert").style.display='none'}>&times;</span> 
+          <strong><Link href="/signup">Sign Up</Link></strong>&nbsp;🚀 To create your <Link href="/user/Web3pedia"><a style={{"fontWeight":"500"}}>Web3pedia</a></Link> profile!
+        </div>
+      </>}
+      
       <br></br>
       <div className='main-header-2'>
         <span className='header-2'>Web3pedia</span><br></br>
@@ -108,6 +119,9 @@ const Home = ( {data} ) => {
             </div>
             <div className='updates-block'>
               <span className='quick-head'>Updates</span><br></br>
+              <ul>
+                <li><Link href="/docs/updates#profile-update">Profile Update</Link></li>
+              </ul>
               <br></br>
               <Link href='/docs/updates'><a className='b-link'>View More</a></Link>
             </div>

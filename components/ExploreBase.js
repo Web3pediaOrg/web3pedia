@@ -122,7 +122,7 @@ export default function ExploreBase( {search_value} ) {
     <>
      <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href="./public/favicon.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="explore-topnav" id='myTopnav'>
           <Link href="/" replace><a className="explore-nav-logo"><span style={{"fontFamily":"Raleway"}}>W</span>eb3pedia</a></Link>

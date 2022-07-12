@@ -15,7 +15,13 @@ export default function Updates() {
         <div className='docs-path'>
           <Link href="/docs"><a>Docs</a></Link> &gt; <Link href="/docs"><a>Updates</a></Link>
         </div>
-        <span className='docs-cat-head'>Updates</span>
+        <span className='docs-cat-head'>Updates</span><br></br>
+        <br></br>
+        <span style={{"fontSize":"25px","fontWeight":"500"}}>July 2022</span><br></br>
+        <div className='update-docs-div' id='profile-update'>
+          <span style={{"fontSize":"25px","fontWeight":"400"}}>Profile Update</span><br></br>
+          <span style={{"fontSize":"17px","fontWeight":"400"}}>Display your web3 projects on your web3pedia profile.</span><br></br>
+        </div>
       </div>
     </>
   )

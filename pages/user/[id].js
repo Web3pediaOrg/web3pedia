@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Base from "../../components/base";
 import { useRouter } from "next/router";
+import { auth } from "../../components/config/fireb";
 
 export async function getStaticPaths() { 
 return { 
@@ -15,7 +16,7 @@ return {
 export async function getStaticProps({ params }){
     
     try {
-      const res = await fetch("https://web3pedia-api.vercel.app/api/user/"+params.id);
+      const res = await fetch("http://web3pedia-api.vercel.app/api/user/"+params.id);
       const data = await res.json();
       const data_status = true
       return {
@@ -23,7 +24,7 @@ export async function getStaticProps({ params }){
           data,
           data_status,
         },
-        revalidate: 1800,
+        revalidate: 900,
         
       };
     }
@@ -42,7 +43,8 @@ export async function getStaticProps({ params }){
 
 
 const UserProfile = ( {data, data_status} ) => {
-  const router = useRouter()
+  const router = useRouter();
+  const user = auth.currentUser;
   if (router.isFallback)  return (
     <>  
             <Head>
@@ -65,35 +67,56 @@ const UserProfile = ( {data, data_status} ) => {
     return (
         <>  
             <Head>
-                <title>{data.display_name} | Web3pedia Profiles</title>
+                <title>{data.profile.display_name} | Web3pedia Profiles</title>
             </Head>
             <Base></Base>
             <br></br>
             <br></br>
             <div className="user-profile-main">
             <div className="user-profile">
-                <span className="user-display-name">{data.display_name}</span><br></br>
-                <span className="user-username">@{data.username}</span><br></br>
+                <span className="user-display-name">{data.profile.display_name}</span><br></br>
+                <span className="user-username">@{data.profile.username}</span><br></br>
                 <br></br>
-                <div className="profile-content">{data.about}</div>
+                <div className="profile-content">{data.profile.about}</div>
                 
-                <span><i className="fa fa-map-marker" style={{"fontSize":"17px","color":"#6B7280"}}></i> {data.location}</span>&nbsp;&nbsp;&nbsp;
-                <span><i className="fa fa-link" style={{"fontSize":"17px","color":"#6B7280"}}></i> <a href={"https://"+ data.website} target="_blank" rel="noreferrer" className="b-link">{data.website}</a></span>
+                <span><i className="fa fa-map-marker" style={{"fontSize":"17px","color":"#6B7280"}}></i> {data.profile.location}</span>&nbsp;&nbsp;&nbsp;
+                <span><i className="fa fa-link" style={{"fontSize":"17px","color":"#6B7280"}}></i> <a href={"https://"+ data.profile.website} target="_blank" rel="noreferrer" className="b-link">{data.profile.website}</a></span>
                 
                 <div className="profile-cat">Social Links:</div>
                 <div className="profile-social-links">
-                    <a href={"https://www.twitter.com/"+data.twitter_link} target="_blank" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.twitter_link}</a>
-                    <a href={"https://www.github.com/"+data.github_link} target="_blank" rel="noreferrer"><i className="fa fa-github" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.github_link}</a>
+                    <a href={"https://www.twitter.com/"+data.profile.twitter_link} target="_blank" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.profile.twitter_link}</a>
+                    <a href={"https://www.github.com/"+data.profile.github_link} target="_blank" rel="noreferrer"><i className="fa fa-github" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.profile.github_link}</a>
                 </div>
 
                 <div className="profile-cat">Web3 Projects:</div>
-                <span style={{"fontSize":"12px","color":"#8c8c8c"}}><i>No Projects</i></span>
-                {/* <div className="user-web3-projects">
-                    <a href="/" target="blank">Web3pedia<br></br><span>web3pedia.info</span></a>
-                </div> */}
+
+                {data.projects.length != 0 ? 
+                <>
+                  {data.projects.map((project) => {
+                  return (
+                    <>
+                      <div className="user-web3-projects">
+                          <a href={"https://"+project.url} target="_blank" rel="noreferrer">{project.name}<br></br><span>{project.url}</span></a>
+                      </div>
+                    </>
+                  )
+                  })}
+                </>:
+                <>
+                  <span style={{"fontSize":"12px","color":"#8c8c8c"}}><i>No Projects</i></span>
+                </>
+                }
+
             </div>
             </div>
             <div className="profile-footer">
+              {user ? <></>:
+              <>
+                <div className="alert" id='alert'>
+                  <strong><Link href="/signup">Sign Up</Link></strong> to create your Web3pedia profile.
+                </div>
+                <br></br>
+              </>}
                 <div className="profile-footer-links">
                   <Link href="/"><a>Web3pedia</a></Link>
                 </div>
@@ -108,9 +131,12 @@ const UserProfile = ( {data, data_status} ) => {
           <title>Web3pedia Profiles</title>
         </Head>
         <Base></Base>
+        <br></br>
+        <br></br>
         <div className="user-profile-main">
           <div className="user-profile">
-            <h1>This account doesn’t exist</h1>
+            <span style={{"fontSize":"24px","fontWeight":"500"}}>This account doesn’t exist</span><br></br>
+            <span style={{"fontSize":"15px","color":"#999999"}}>Try searching for another.</span>
           </div>
         </div>
       </>
@@ -120,3 +146,4 @@ const UserProfile = ( {data, data_status} ) => {
 }
 
 export default UserProfile
+
