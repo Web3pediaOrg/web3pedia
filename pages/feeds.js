@@ -218,7 +218,7 @@ const Feeds = ({data,data_users}) => {
                 <br></br>
                 <div className="feeds-section">
                     <div className="feed-post">
-                        <div className="post-feed-div" id="post-feed" onClick={() => displayModal()}>What's new in web3?</div>
+                        <div className="post-feed-div" id="post-feed" onClick={() => displayModal()}>What&apos;s new in web3?</div>
                         <br></br>
                 <span onClick={() => refreshFeeds()} className="b-link" style={{"cursor":"pointer"}}>Refresh feeds</span>
                 
@@ -234,7 +234,7 @@ const Feeds = ({data,data_users}) => {
                             <hr></hr>
                             <Link href={"/user/"+user.displayName}><a className="post-username">{user.displayName}</a></Link>
                             <form onSubmit={postFeed}>
-                                <textarea className="post-textarea" id="postarea" style={{"whiteSpace":"pre-line"}} rows="7" placeholder="What's new in web3?" maxlength="150" required></textarea>
+                                <textarea className="post-textarea" id="postarea" style={{"whiteSpace":"pre-line"}} rows="7" placeholder="What's new in web3?" maxLength="150" required></textarea>
                                 <span style={{"fontSize":"15px","color":"#b3b3b3","float":"right"}}>Max: 150</span>
                                 <button type="submit" className="post-btn">Post</button>
                             </form>
