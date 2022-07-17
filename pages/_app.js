@@ -11,6 +11,7 @@ import '../styles/pages/docs.css'
 import '../styles/pages/settings.css'
 import '../styles/pages/support.css'
 import '../styles/pages/profile.css'
+import '../styles/pages/feeds.css'
 import '../styles/pages/explore/hackathons.css'
 import '../styles/pages/explore/articles.css'
 

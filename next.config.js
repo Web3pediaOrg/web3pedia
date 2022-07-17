@@ -8,6 +8,11 @@ const nextConfig = {
         destination: '/user/SohamSaoji',
         permanent: true,
       },
+      {
+        source: '/profile',
+        destination: '/user/profile',
+        permanent: true,
+      },
     ]
   },
 }

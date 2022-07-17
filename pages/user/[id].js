@@ -77,10 +77,14 @@ const UserProfile = ( {data, data_status} ) => {
                 <span className="user-display-name">{data.profile.display_name}</span><br></br>
                 <span className="user-username">@{data.profile.username}</span><br></br>
                 <br></br>
-                <div className="profile-content">{data.profile.about}</div>
+                <div className="profile-content" style={{"whiteSpace":"pre-line"}}>{data.profile.about}</div>
                 
-                <span><i className="fa fa-map-marker" style={{"fontSize":"17px","color":"#6B7280"}}></i> {data.profile.location}</span>&nbsp;&nbsp;&nbsp;
-                <span><i className="fa fa-link" style={{"fontSize":"17px","color":"#6B7280"}}></i> <a href={"https://"+ data.profile.website} target="_blank" rel="noreferrer" className="b-link">{data.profile.website}</a></span>
+                <div className="profile-meta-data">
+                  <span style={{"color":"#6B7280"}}><i className="fa fa-map-marker" style={{"fontSize":"17px","color":"#6B7280"}}></i> {data.profile.location}</span>
+                  <span><i className="fa fa-link" style={{"fontSize":"17px","color":"#6B7280"}}></i> <a href={"https://"+ data.profile.website} target="_blank" rel="noreferrer" className="b-link">{data.profile.website}</a></span>
+                  <span style={{"color":"#6B7280"}}><i className="fa fa-calendar" style={{"fontSize":"17px"}}></i>&nbsp; joined  {data.profile.joined_date}</span>
+                </div>
+                {/* <span><b>Joined:</b> March 2022</span> */}
                 
                 <div className="profile-cat">Social Links:</div>
                 <div className="profile-social-links">
@@ -92,15 +96,16 @@ const UserProfile = ( {data, data_status} ) => {
 
                 {data.projects.length != 0 ? 
                 <>
+                  <div className="user-web3-projects">
                   {data.projects.map((project) => {
                   return (
                     <>
-                      <div className="user-web3-projects">
                           <a href={"https://"+project.url} target="_blank" rel="noreferrer">{project.name}<br></br><span>{project.url}</span></a>
-                      </div>
                     </>
+                  
                   )
                   })}
+                  </div>
                 </>:
                 <>
                   <span style={{"fontSize":"12px","color":"#8c8c8c"}}><i>No Projects</i></span>
@@ -135,7 +140,7 @@ const UserProfile = ( {data, data_status} ) => {
         <br></br>
         <div className="user-profile-main">
           <div className="user-profile">
-            <span style={{"fontSize":"24px","fontWeight":"500"}}>This account doesn’t exist</span><br></br>
+            <span style={{"fontSize":"24px","fontWeight":"500"}}>This account doesn&apos;t exist</span><br></br>
             <span style={{"fontSize":"15px","color":"#999999"}}>Try searching for another.</span>
           </div>
         </div>

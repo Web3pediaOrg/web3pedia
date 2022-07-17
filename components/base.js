@@ -40,7 +40,7 @@ export default function Base() {
                 <i className="fa fa-caret-down"></i>
               </button>
               <div className="dropdown-content">
-                <Link href="/explore" replace><a className="drop-content-2">Explore<sup style={{"fontSize":"9px"}}>Beta</sup></a></Link>
+                <Link href="/explore" replace><a className="drop-content-2">Explore</a></Link>
                 <Link href="/news" replace><a className="drop-content-2">News</a></Link>
               </div>
             </div>

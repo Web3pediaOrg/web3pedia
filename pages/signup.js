@@ -72,7 +72,7 @@ export default function SignUp() {
             <input type="email" id='re-email' required></input><br></br>
 
             <label className='auth-label'>Password</label>
-            <input type="password" id='password' required></input><br></br>
+            <input type="password" id='password' minLength="8" required></input><br></br>
 
             <span>By registering you agree to the <Link href="/docs/terms"><a className='b-link'>Terms of Use</a></Link> and have read the <Link href="/docs/privacy"><a className='b-link'>Privacy Policy</a></Link>.</span><br></br>
             <br></br>

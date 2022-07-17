@@ -40,7 +40,7 @@ export default function ExploreBase( {search_value} ) {
   
               b = document.createElement("DIV");
   
-              b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+              b.innerHTML = "<i class='fa fa-search' style={{'color':'#6B7280'}}></i>&nbsp;&nbsp;<strong>" + arr[i].substr(0, val.length) + "</strong>";
               b.innerHTML += arr[i].substr(val.length);
   
               b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";

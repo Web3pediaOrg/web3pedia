@@ -67,7 +67,7 @@ export default function Login() {
             <input type="email" id='email'></input><br></br>
 
             <label className='auth-label'>Password</label>
-            <input type="password" id="password"></input><br></br>
+            <input type="password" id="password" minLength="8"></input><br></br>
             <button className='auth-btn' type='submit'>Login 🚀</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Link href='/password_reset'><a className='b-link'>Lost password?</a></Link><br></br>
           </form>
             <br></br>

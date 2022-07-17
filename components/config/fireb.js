@@ -20,4 +20,3 @@ const database = getDatabase();
 
 export {auth,database}
 
-// https://github.com/sairajchouhan/nextjs-firebase-auth

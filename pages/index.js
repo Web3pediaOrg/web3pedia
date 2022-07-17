@@ -58,8 +58,8 @@ const Home = ( {data} ) => {
           </div>
           <div className='content-block'>
           <p>&nbsp;Here&apos;s <b>Web3pedia</b> to help you!</p>
-          <p>Web3pedia, built-in 2022, is a one-stop-shop for all queries related to <Link href="/explore/articles/web3"><a className="b-link">Web3</a></Link>.
-          Our mission is to make Web3 more easier by providing people everything about web3 in one place.&nbsp;<Link href="/about"><a className='b-link'>Read More</a></Link>
+          <p>Web3pedia, built-in 2022, is a one-stop-shop for all queries related to <Link href="/explore/article/web3"><a className="b-link">Web3</a></Link>.
+          Our mission is to help people build on web3 by providing them everything in one place.&nbsp;<Link href="/about"><a className='b-link'>Read More</a></Link>
           </p>     
           <div className='get-started-btn'>
             {user ?<><Link href='/dashboard'><a>Go to Dashboard 🚀</a></Link></>:<><Link href='/signup'><a>Get Started 🚀</a></Link></>}

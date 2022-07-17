@@ -3,9 +3,20 @@ import Link from 'next/link'
 import { auth } from '../components/config/fireb'
 import {useRouter} from 'next/router'
 import { signOut } from 'firebase/auth'
-import logo from "../public/images/W.png"
 
-export default function Explore() {
+export async function getStaticProps(){
+  const res = await fetch("https://web3pedia-api.vercel.app/api/explore/search");
+  const data = await res.json();
+  return {
+    props: {
+      data,
+    },
+    revalidate: 3600,
+    
+  };
+}
+
+const Explore = ({data}) => {
   const user = auth.currentUser;
   const router = useRouter();
 
@@ -13,7 +24,7 @@ export default function Explore() {
     signOut(auth).then(() => {
         router.push("/explore")
       }).catch((error) => {
-        // An error happened.
+        
       });
   }
 
@@ -39,8 +50,9 @@ export default function Explore() {
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
 
             b = document.createElement("DIV");
+            // b.innerHTML += ""
 
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML = "<i class='fa fa-search' style={{'color':'#6B7280'}}></i>&nbsp;&nbsp;<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);
 
             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
@@ -57,40 +69,35 @@ export default function Explore() {
           }
         }
     });
-    /*execute a function presses a key on the keyboard:*/
+
     inp.addEventListener("keydown", function(e) {
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
         if (e.keyCode == 40) {
-          /*If the arrow DOWN key is pressed,
-          increase the currentFocus variable:*/
           currentFocus++;
-          /*and and make the current item more visible:*/
+
           addActive(x);
         } else if (e.keyCode == 38) { //up
-          /*If the arrow UP key is pressed,
-          decrease the currentFocus variable:*/
+
           currentFocus--;
-          /*and and make the current item more visible:*/
+
           addActive(x);
         } else if (e.keyCode == 13) {
-          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+
           e.preventDefault();
           if (currentFocus > -1) {
-            /*and simulate a click on the "active" item:*/
+
             if (x) x[currentFocus].click();
           }
         }
     });
     function addActive(x) {
-      /*a function to classify an item as "active":*/
+      
       if (!x) return false;
-      /*start by removing the "active" class on all items:*/
-      // removeActive(x);
+      
       if (currentFocus >= x.length) currentFocus = 0;
       if (currentFocus < 0) currentFocus = (x.length - 1);
-      /*add class "autocomplete-active":*/
-      // x[currentFocus].classList.add("autocomplete-active");
+     
     }
     // function removeActive(x) {
     //   /*a function to remove the "active" class from all autocomplete items:*/
@@ -99,8 +106,7 @@ export default function Explore() {
     //   }
     // }
     function closeAllLists(elmnt) {
-      /*close all autocomplete lists in the document,
-      except the one passed as an argument:*/
+      
       var x = document.getElementsByClassName("autocomplete-items");
       for (var i = 0; i < x.length; i++) {
         if (elmnt != x[i] && elmnt != inp) {
@@ -108,14 +114,14 @@ export default function Explore() {
         }
       }
     }
-    /*execute a function when someone clicks in the document:*/
+    
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
     });
   }
 
-  var countries = ['Articles','Hackathons','Events','Courses','News','Web3 - Article','DAO (Decentralized Autonomous Organization) - Article','NFT (Non-Fungible Token) - Article','DeFi Theory - Article','Proof Of Work - Article','Proof Of Stake - Article']
-  var page_links = ['/explore/articles','/explore/hackathons','/explore/events','/explore/courses','/new','explore/article/web3','explore/article/dao','explore/article/nft','explore/article/defi-theory','explore/article/proof-of-work','explore/article/proof-of-stake']
+  var countries = data.pages
+  var page_links = data.page_links
 
 
   return (
@@ -193,3 +199,6 @@ export default function Explore() {
       </>
   )
 }
+
+export default Explore
+
