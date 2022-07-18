@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Base from '../components/base'
 import Footer from '../components/footer'
 import { auth } from '../components/config/fireb'
-import Script from "next/script"
 
 export const getStaticProps = async () => {
   const res = await fetch("https://web3pediaorg.github.io/web3/api/quick.json");
@@ -23,21 +22,22 @@ const Home = ( {data} ) => {
   const user = auth.currentUser;
   return (
     <>
-    <Script id='ga-link' strategy="lazyOnLoad" src={`https://www.googletagmanager.com/gtag/js?id=G-0MEM0PEW6X`}></Script>
-    <Script strategy="lazyOnLoad" id='ga-code'>
-     {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-0MEM0PEW6X');
-      `}
-    </Script>
 
      <Head>
         <title>Web3pedia</title>
         <meta name="description" content="Helping People With Web3" />
         <link rel="icon" href="/favicon.png" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0MEM0PEW6X"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0MEM0PEW6X', { page_path: window.location.pathname });
+            `,
+          }}
+        />
         
       </Head>
       <Base></Base>
