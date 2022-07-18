@@ -23,8 +23,8 @@ const Home = ( {data} ) => {
   const user = auth.currentUser;
   return (
     <>
-    <Script strategy="lazyOnLoad" src={`https://www.googletagmanager.com/gtag/js?id=G-0MEM0PEW6X`}></Script>
-    <Script strategy="lazyOnLoad">
+    <Script id='ga-link' strategy="lazyOnLoad" src={`https://www.googletagmanager.com/gtag/js?id=G-0MEM0PEW6X`}></Script>
+    <Script strategy="lazyOnLoad" id='ga-code'>
      {`
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
