@@ -4,7 +4,7 @@ import { auth } from '../../components/config/fireb'
 import { updateProfile,sendEmailVerification } from 'firebase/auth'
 import Base from '../../components/base'
 import { useRouter } from 'next/router'
-import { ref,set,get,child,push } from "firebase/database";
+import { ref,set,get,child,push,update } from "firebase/database";
 import { userdatabase } from '../../components/config/fireb-2'
 import { feeddatabase } from '../../components/config/feeds'
 import { useEffect,useState } from 'react';
@@ -85,7 +85,7 @@ export default function Profile() {
     const github_link = document.getElementById("github").value;
 
 
-    set(ref(userdatabase, "/user/"+username.toLowerCase()+"/profile"), {
+    update(ref(userdatabase, "/user/"+username.toLowerCase()+"/profile"), {
       display_name:display_name,
       username:username,
       about:about,

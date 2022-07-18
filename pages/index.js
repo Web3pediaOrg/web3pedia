@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Base from '../components/base'
 import Footer from '../components/footer'
 import { auth } from '../components/config/fireb'
+// import Script from "next/script"
 
 export const getStaticProps = async () => {
   const res = await fetch("https://web3pediaorg.github.io/web3/api/quick.json");
@@ -22,10 +23,22 @@ const Home = ( {data} ) => {
   const user = auth.currentUser;
   return (
     <>
+    <Script strategy="lazyOnLoad" src={`https://www.googletagmanager.com/gtag/js?id=G-0MEM0PEW6X`}></Script>
+    <Script strategy="lazyOnLoad">
+     {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0MEM0PEW6X');
+      `}
+    </Script>
+
      <Head>
         <title>Web3pedia</title>
         <meta name="description" content="Helping People With Web3" />
         <link rel="icon" href="/favicon.png" />
+        
       </Head>
       <Base></Base>
       {user ? <>
@@ -66,7 +79,7 @@ const Home = ( {data} ) => {
             
           </div>
           <br></br>
-          <a href='https://twitter.com/Web3pedia_' target="_blank" title="twitter" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"24px","color":"#6B7280"}}></i></a>&nbsp;&nbsp;&nbsp;
+          <a href='https://twitter.com/intent/follow?screen_name=Web3pedia_' target="_blank" title="twitter" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"24px","color":"#6B7280"}}></i></a>&nbsp;&nbsp;&nbsp;
           <a href='https://github.com/Web3pedia' target="_blank" title="Github" rel="noreferrer"><i className="fa fa-github" style={{"fontSize":"24px","color":"#6B7280"}}></i></a>&nbsp;&nbsp;&nbsp;
           {/* <a href='/saoji' title="Youtube"><i className="fa fa-linkedin" style={{"fontSize":"24px","color":"#6B7280"}}></i></a> */}
           </div>
