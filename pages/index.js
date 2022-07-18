@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Base from '../components/base'
 import Footer from '../components/footer'
 import { auth } from '../components/config/fireb'
-// import Script from "next/script"
+import Script from "next/script"
 
 export const getStaticProps = async () => {
   const res = await fetch("https://web3pediaorg.github.io/web3/api/quick.json");
