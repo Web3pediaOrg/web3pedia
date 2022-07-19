@@ -43,6 +43,7 @@ const ExploreArticles = ( {data} ) => {
         <br></br>
         <span className='explore-subhead'>All Articles</span><br></br>
         <br></br>
+        <Link href="/explore/article/web3"><a className="b-link">What is Web3?</a></Link><br></br>
         {data.articles.map((article) => {
           return (
             <>
