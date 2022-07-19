@@ -34,11 +34,11 @@ const ExploreCourses = ( {data} ) => {
           {data.map((course) =>{
           return (
             <div className='hackathon-block' key={course.title}>
-            <div className='hackathon-title'>{course.title}</div>
-            <div className='hackathon-host'><b>Level:</b> {course.level}&nbsp;&nbsp;&nbsp; <b>Type:</b> {course.type}</div>
-            <div className='hackathon-duration'><b>Cost:</b> {course.cost}</div>
-            <a href={course.link} className='hackathon-link'>Visit</a>
-          </div>   
+              <div className='hackathon-title'>{course.title}</div>
+              <div className='hackathon-host'><b>Level:</b> {course.level}&nbsp;&nbsp;&nbsp; <b>Type:</b> {course.type}</div>
+              <div className='hackathon-duration'><b>Cost:</b> {course.cost}</div>
+              <a href={course.link} className='hackathon-link'>Visit</a>
+            </div>   
           )
         } )}
         </>:<><span style={{"fontSize":"13px","color":"#999999"}}><i>No Courses available. <Link href="/explore/add/courses"><a className="b-link">register course?</a></Link></i></span></>}

@@ -261,7 +261,7 @@ function addWeb3Project(e) {
             <br></br>
             <br></br>
 
-            <div style={{"color":" #ff5c33","fontWeight":"500","display":"block"}} id="verify-send-msg">
+            <div style={{"color":" #ff5c33","fontWeight":"500","display":"none"}} id="verify-send-msg">
               Verification link to <b>{user.email}</b>. If you don&apos;t find in Inbox check spam folder.
               <br></br><br></br>
               <span style={{"fontWeight":"400"}}>Click on Refresh when you verify your email.<br></br>

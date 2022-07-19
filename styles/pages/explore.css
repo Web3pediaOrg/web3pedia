@@ -166,12 +166,13 @@
     background-color: #1A73E8;
     padding: 6px 17px;
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: 30px;
     border-radius: 4px;
     color: white;
 }  
 
 .explore-base-search {
+  /* float: left; */
   margin-top: 30px;
   margin-left: 15px;
   display: flex;
@@ -184,6 +185,12 @@
     padding: 3px 9px 3px 9px;
     border-radius: 20px;
     border: 1px solid #6B7280;
+}
+
+@media only screen and (max-width: 650px) {
+  .explore-base-searchbar {
+    width: 110%;
+  }
 }
 
 .explore-base-searchbar input {
@@ -244,3 +251,4 @@
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+

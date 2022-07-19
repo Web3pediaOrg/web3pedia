@@ -159,3 +159,7 @@
         margin-top: 10px;
     }
 }
+
+.profile-image {
+    border-radius: 5px;
+}
