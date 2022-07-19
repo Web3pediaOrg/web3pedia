@@ -163,7 +163,7 @@ const Explore = ({data}) => {
       <br></br>
       <div className='explore-home-main'>
         <div className='main-header-2'>
-          <span className='header-2'><span style={{"fontFamily":"Raleway"}}>W</span>eb3pedia Explore<sup style={{"fontSize":"14px","fontWeight":"200"}}>Beta</sup></span><br></br>
+          <span className='header-2'><span style={{"fontFamily":"Raleway"}}>W</span>eb3pedia Explore</span><br></br>
         </div>
         <br></br>
         <div className='autocomplete'>

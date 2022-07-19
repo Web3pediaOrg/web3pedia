@@ -56,7 +56,7 @@ const  ArticlesContent = ( {data} ) => {
     return (
       <>
       <Head>
-          <title>Articles | Web3pedia </title>
+          <title>{data.title} | Web3pedia Articles</title>
           <meta name="description" content="Helping People With Web3" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
