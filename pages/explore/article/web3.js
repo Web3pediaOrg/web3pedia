@@ -25,7 +25,7 @@ const  ArticlesContent = () => {
         <h3>What is Web 1.0?</h3>
         Web 1.0 was the first iteration of the web. Most participants were consumers of content, and the creators were typically developers who build websites that contained information served up mainly in text or image format. Web 1.0 lasted approximately from 1991 to 2004.<br></br>
         <br></br>
-        Web 1.0 consisted of sites serving static content instead of dynamic HTML. Data and content were served from a static file system rather than a database, and sites didn't have much interactivity at all.
+        Web 1.0 consisted of sites serving static content instead of dynamic HTML. Data and content were served from a static file system rather than a database, and sites didn&apos;t have much interactivity at all.
         <h3>What is Web 2.0?</h3>
         Most of us have primarily experienced the web in its current form, commonly referred to as web2. You can think of web2 as the interactive and social web.<br></br>
         <br></br>
@@ -48,7 +48,7 @@ const  ArticlesContent = () => {
             <li>Native built-in payments</li>
         </ul>
         <br></br>
-        In web3, developers don't usually build and deploy applications that run on a single server or that store their data in a single database (usually hosted on and managed by a single cloud provider).<br></br>
+        In web3, developers don&apos;t usually build and deploy applications that run on a single server or that store their data in a single database (usually hosted on and managed by a single cloud provider).<br></br>
         <br></br>
         Instead, web3 applications either run on blockchains, decentralized networks of many peer to peer nodes (servers), or a combination of the two that forms a cryptoeconomic protocol. These apps are often referred to as dapps (decentralized apps), and you will see that term used often in the web3 space.<br></br>
         <br></br>
