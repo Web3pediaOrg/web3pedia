@@ -28,7 +28,7 @@ export default function SignUp() {
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
-        router.push('/')
+        router.push('/user/profile')
         // ...
       })
       .catch((error) => {

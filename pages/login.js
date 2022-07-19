@@ -32,7 +32,7 @@ export default function Login() {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode == "auth/wrong-password") {
-        alert("Please enter password.");
+        alert("Incorrect Password.");
       }
       else if (errorCode == "auth/user-not-found") {
         alert("Email Not Registered.");

@@ -41,8 +41,7 @@ export async function getStaticProps({ params }){
     }
   };
 
-
-const UserProfile = ( {data, data_status} ) => {
+const UserProfile = ({data, data_status} ) => {
   const router = useRouter();
   const user = auth.currentUser;
   if (router.isFallback)  return (
@@ -68,6 +67,7 @@ const UserProfile = ( {data, data_status} ) => {
         <>  
             <Head>
                 <title>{data.profile.display_name} | Web3pedia Profiles</title>
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <Base></Base>
             <br></br>
@@ -84,12 +84,11 @@ const UserProfile = ( {data, data_status} ) => {
                   <span><i className="fa fa-link" style={{"fontSize":"17px","color":"#6B7280"}}></i> <a href={"https://"+ data.profile.website} target="_blank" rel="noreferrer" className="b-link">{data.profile.website}</a></span>
                   <span style={{"color":"#6B7280"}}><i className="fa fa-calendar" style={{"fontSize":"17px"}}></i>&nbsp; joined  {data.profile.joined_date}</span>
                 </div>
-                {/* <span><b>Joined:</b> March 2022</span> */}
                 
                 <div className="profile-cat">Social Links:</div>
                 <div className="profile-social-links">
-                    <a href={"https://www.twitter.com/"+data.profile.twitter_link} target="_blank" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.profile.twitter_link}</a>
-                    <a href={"https://www.github.com/"+data.profile.github_link} target="_blank" rel="noreferrer"><i className="fa fa-github" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.profile.github_link}</a>
+                    <a href={"https://www.twitter.com/"+data.profile.twitter_link} title="twitter" target="_blank" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.profile.twitter_link}</a>
+                    <a href={"https://www.github.com/"+data.profile.github_link} target="_blank" title="github" rel="noreferrer"><i className="fa fa-github" style={{"fontSize":"18px","color":"#6B7280"}}></i> @{data.profile.github_link}</a>
                 </div>
 
                 <div className="profile-cat">Web3 Projects:</div>

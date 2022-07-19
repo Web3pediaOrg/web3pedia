@@ -49,7 +49,7 @@ export default function Profile() {
               displayName: username
             }).then(() => {
               set(ref(userdatabase, "/user/"+username.toLowerCase()+"/profile"), {
-                
+                username:auth.currentUser.displayName,
                 uid:auth.currentUser.uid,
                 joined_date : joined_month + " " + joined_year
               }).then (
@@ -87,7 +87,6 @@ export default function Profile() {
 
     update(ref(userdatabase, "/user/"+username.toLowerCase()+"/profile"), {
       display_name:display_name,
-      username:username,
       about:about,
       location:location,
       website:website,
@@ -104,7 +103,8 @@ export default function Profile() {
   function sendVerificationEmail() {
     sendEmailVerification(auth.currentUser)
     .then(() => {
-      alert("Email verfication link send to "+auth.currentUser.email)
+      document.getElementById("send-verify-btn").disabled = true;
+      document.getElementById("verify-send-msg").style.display = "block"
     });
   }
 
@@ -257,7 +257,16 @@ function addWeb3Project(e) {
           {user.emailVerified ? <></>:
           <>
             <span style={{"color":"#808080"}}>You need verified email to create profile</span> <br></br>
-            <button className="auth-btn-3" onClick={() => sendVerificationEmail()} style={{"marginTop":"10px"}}>Send Verification Email</button>
+            <button className="auth-btn-3" id='send-verify-btn' onClick={() => sendVerificationEmail()} style={{"marginTop":"10px"}}>Send Verification Email</button>
+            <br></br>
+            <br></br>
+
+            <div style={{"color":" #ff5c33","fontWeight":"500","display":"block"}} id="verify-send-msg">
+              Verification link to <b>{user.email}</b>. If you don&apos;t find in Inbox check spam folder.
+              <br></br><br></br>
+              <span style={{"fontWeight":"400"}}>Click on Refresh when you verify your email.<br></br>
+              <Link href="/user/profile"><a className='b-link'>Refresh</a></Link></span>
+            </div>
             
           </>}
           
