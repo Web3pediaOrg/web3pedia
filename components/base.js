@@ -35,15 +35,15 @@ export default function Base() {
       <div className="topnav" id='myTopnav'>
           <Link href="/" replace><a className="nav-logo"><span style={{"fontFamily":"Raleway"}}>W</span>eb3pedia</a></Link>
           <div className="topnav-right">
-          <div className="dropdown">
+            {/* <div className="dropdown">
               <button className="dropbtn">Products&nbsp; 
                 <i className="fa fa-caret-down"></i>
               </button>
               <div className="dropdown-content">
                 <Link href="/explore" replace><a className="drop-content-2">Explore</a></Link>
-                <Link href="/news" replace><a className="drop-content-2">News</a></Link>
               </div>
-            </div>
+            </div> */}
+            <Link href="/explore"><a>Explore</a></Link>
             <Link href="/docs"><a>Docs</a></Link>
             <Link href="/about"><a>About</a></Link>
             <Link href="/support"><a>Support</a></Link> 
