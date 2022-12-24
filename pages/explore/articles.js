@@ -25,8 +25,8 @@ const ExploreArticles = ( {data} ) => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </Head>
-    <ExploreBase search_value='category: Articles'></ExploreBase>
-      <div className='explore-content'>
+    <ExploreBase></ExploreBase>
+      <div className='explore-main'>
         <br></br>
         <span className='explore-head'>Articles</span>&nbsp;&nbsp;<a href='https://forms.gle/NrNGBusMu93Lf9r59' target="_blank" rel="noreferrer" className='b-link'>Suggest / Add</a><br></br><br></br>
         <br></br>

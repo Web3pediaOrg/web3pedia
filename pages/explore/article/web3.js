@@ -60,6 +60,23 @@ const  ArticlesContent = () => {
         </ul>
       </p>
       <a href='https://forms.gle/NrNGBusMu93Lf9r59' className='b-link' target="_blank" rel="noreferrer">Suggest Edits</a>
+      <br></br>
+      <br></br>
+      {/* <nav className="paginav"> */}
+      {/* <Link href="/expplore/article/DAO"><a className="prev">
+        <span className="title">« Prev Page</span>
+        <br></br>
+        <span className='ar-title'>DAO (Decentralized Autonomous Organization)</span>
+      </a>
+      </Link> */}
+      {/* <Link href="/expplore/article/DAO"><a className="next">
+        <span className="title">Next Page »</span>
+        <br></br>
+        <span className='ar-title'>DAO (Decentralized Autonomous Organization)</span>
+      </a>
+      </Link>
+    </nav> */}
+    
     </div>
     <br></br>
     <br></br>
