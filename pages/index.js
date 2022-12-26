@@ -134,6 +134,7 @@ const Home = ( {data} ) => {
             <div className='updates-block'>
               <span className='quick-head'>Updates</span><br></br>
               <ul>
+                <li><Link href="/docs/updates">Explore Update</Link></li>
                 <li><Link href="/docs/updates#profile-update">Profile Update</Link></li>
               </ul>
               <br></br>

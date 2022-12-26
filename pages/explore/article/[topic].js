@@ -19,7 +19,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const res = await fetch("https://web3pediaorg.github.io/web3/api/explore/articles/"+params.topic+".json");
 
-
   try {
     const data = await res.json();
     return {
@@ -67,23 +66,24 @@ const  ArticlesContent = ( {data} ) => {
         <Link href='/explore'><a className='b-link'>Web3pedia Explore &gt;</a></Link>&nbsp;&nbsp;<Link href='/explore/articles'><a className='b-link'>Articles &gt;</a></Link>
         <h2>{data.title}</h2>
         <div style={{"whiteSpace":"pre-line"}} dangerouslySetInnerHTML={{__html:data.content}}></div>
+        <br></br>
         <a href='https://forms.gle/NrNGBusMu93Lf9r59' className='b-link' target="_blank" rel="noreferrer">Suggest Edits</a>
         <br></br>
       <br></br>
-      {/* <nav className="paginav">
-      <Link href="/expplore/article/DAO"><a className="prev">
+      <nav className="paginav">
+      <Link href={"/explore/article/"+data.next_art.id}><a className="prev">
         <span className="title">« Prev Page</span>
         <br></br>
-        <span className='ar-title'>What is Web3?</span>
+        <span className='ar-title'>{data.next_art.topic}</span>
       </a>
       </Link>
-      <Link href="/expplore/article/DAO"><a className="next">
+      <Link href={"/explore/article/"+data.prev_art.id}><a className="next">
         <span className="title">Next Page »</span>
         <br></br>
-        <span className='ar-title'>NFT (Non-Fungible Token)</span>
+        <span className='ar-title'>{data.prev_art.topic}</span>
       </a>
       </Link>
-    </nav> */}
+    </nav>
       </div>
       
       <br></br>

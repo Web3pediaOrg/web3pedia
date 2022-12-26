@@ -62,20 +62,20 @@ const  ArticlesContent = () => {
       <a href='https://forms.gle/NrNGBusMu93Lf9r59' className='b-link' target="_blank" rel="noreferrer">Suggest Edits</a>
       <br></br>
       <br></br>
-      {/* <nav className="paginav"> */}
-      {/* <Link href="/expplore/article/DAO"><a className="prev">
+      <nav className="paginav">
+      <Link href="/explore/article/proof-of-stake"><a className="prev">
         <span className="title">« Prev Page</span>
         <br></br>
-        <span className='ar-title'>DAO (Decentralized Autonomous Organization)</span>
+        <span className='ar-title'>Proof Of Stake</span>
       </a>
-      </Link> */}
-      {/* <Link href="/expplore/article/DAO"><a className="next">
+      </Link>
+      <Link href="/explore/article/DAO"><a className="next">
         <span className="title">Next Page »</span>
         <br></br>
         <span className='ar-title'>DAO (Decentralized Autonomous Organization)</span>
       </a>
       </Link>
-    </nav> */}
+    </nav>
     
     </div>
     <br></br>
