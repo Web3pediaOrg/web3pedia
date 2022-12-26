@@ -36,39 +36,41 @@ export default function Profile() {
 
     const dbRef = ref(userdatabase);
 
-    if (user.emailVerified != false) {
-      get(child(dbRef, "/user")).then((snapshot) => {
-        if (snapshot.exists()) {
-          var data = snapshot.val();
-          var keys = Object.keys(data)
-          if (keys.includes(username.toLowerCase())) {
-            alert("Username Already Exist.")
-          }
-          else {
-            updateProfile(auth.currentUser, {
-              displayName: username
-            }).then(() => {
-              set(ref(userdatabase, "/user/"+username.toLowerCase()+"/profile"), {
-                username:auth.currentUser.displayName,
-                uid:auth.currentUser.uid,
-                joined_date : joined_month + " " + joined_year
-              }).then (
-                router.push('/user/account')  
-              ).catch((error) => {
-                alert("Error Updating Your Profile.")
-              });
-            }).catch((error) => {
-              alert("Unable to create profile. Try again later.")
-            });   
-          }
+    get(child(dbRef, "/user")).then((snapshot) => {
+      if (snapshot.exists()) {
+        var data = snapshot.val();
+        var keys = Object.keys(data)
+        if (keys.includes(username.toLowerCase())) {
+          alert("Username Already Exist.")
         }
-    }).catch((error) => {
-        console.error(error);
-    });
-  }
-  else {
-    alert("You need verified email to create profile")
-  }
+        else {
+          updateProfile(auth.currentUser, {
+            displayName: username
+          }).then(() => {
+            set(ref(userdatabase, "/user/"+username.toLowerCase()+"/profile"), {
+              username:auth.currentUser.displayName,
+              uid:auth.currentUser.uid,
+              joined_date : joined_month + " " + joined_year
+            }).then (
+              router.push('/user/account')  
+            ).catch((error) => {
+              alert("Error Updating Your Profile.")
+            });
+          }).catch((error) => {
+            alert("Unable to create profile. Try again later.")
+          });   
+        }
+      }
+  }).catch((error) => {
+      console.error(error);
+  });
+
+  //   if (user.emailVerified != false) {
+      
+  // }
+  // else {
+  //   alert("You need verified email to create profile")
+  // }
 
   }
 
@@ -100,13 +102,13 @@ export default function Profile() {
 
   }
 
-  function sendVerificationEmail() {
-    sendEmailVerification(auth.currentUser)
-    .then(() => {
-      document.getElementById("send-verify-btn").disabled = true;
-      document.getElementById("verify-send-msg").style.display = "block"
-    });
-  }
+  // function sendVerificationEmail() {
+  //   sendEmailVerification(auth.currentUser)
+  //   .then(() => {
+  //     document.getElementById("send-verify-btn").disabled = true;
+  //     document.getElementById("verify-send-msg").style.display = "block"
+  //   });
+  // }
 
 // When the user clicks the button, open the modal 
 function displayModal() {
@@ -240,21 +242,25 @@ function addWeb3Project(e) {
           <br></br>
           <div className='settings-content'>
           <span style={{"fontSize":"35px","fontWeight":"500","color":"#22222F"}}>Profile Settings</span><br></br>
+          {/* <br></br>
+          <span style={{"fontWeight":"500","color":"#22222F"}}>Registered email</span><br></br>{user.email} {user.emailVerified ? <><span style={{"color":"#248f24","cursor":"pointer"}} title="Email Verified">&#10004;</span></>:<><span style={{"color":"#cc0000","fontWeight":"600","cursor":"pointer"}} title="Email Not Verified"><i>X</i></span></>} */}
           <br></br>
-          <span style={{"fontWeight":"500","color":"#22222F"}}>Registered email</span><br></br>{user.email} {user.emailVerified ? <><span style={{"color":"#248f24","cursor":"pointer"}} title="Email Verified">&#10004;</span></>:<><span style={{"color":"#cc0000","fontWeight":"600","cursor":"pointer"}} title="Email Not Verified"><i>X</i></span></>}
-      <br></br>
-      <br></br>
-          <form onSubmit={setUserName}>
-            <label style={{"fontWeight":"500","color":"#22222F"}}>Username</label><br></br> 
-            <input type="text" className='account-input' id="username" required></input><br></br>
-            <button className='auth-btn-2' type='submit'>Next 	&rarr;</button>
-          </form>
+          Let's create your web3pedia profile!
+          <br></br>
+          <br></br>
+              <form onSubmit={setUserName}>
+                <label style={{"fontWeight":"500","color":"#22222F"}}>Enter Username</label><br></br> 
+                <input type="text" className='account-input' id="username" required></input><br></br>
+                <button className='auth-btn-2' type='submit'>Next 	&rarr;</button>
+              </form>
 
-          <br></br>
-          <span style={{"color":"#b3b3b3"}}><b>Note: </b>You cannot change your username once set.</span><br></br>
-          <br></br>
+              <br></br>
+              <span style={{"color":"#b3b3b3"}}><b>Note: </b>You cannot change your username once set.</span><br></br>
+              <br></br>
+          {/* {user.emailVerified ? <>
+            
           
-          {user.emailVerified ? <></>:
+          </>:
           <>
             <span style={{"color":"#808080"}}>You need verified email to create profile</span> <br></br>
             <button className="auth-btn-3" id='send-verify-btn' onClick={() => sendVerificationEmail()} style={{"marginTop":"10px"}}>Send Verification Email</button>
@@ -268,7 +274,7 @@ function addWeb3Project(e) {
               <Link href="/user/profile"><a className='b-link'>Refresh</a></Link></span>
             </div>
             
-          </>}
+          </>} */}
           
           </div>
           <br></br>

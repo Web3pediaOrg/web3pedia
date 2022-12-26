@@ -61,7 +61,14 @@ export default function Base() {
                </button>
               </>}
               <div className="dropdown-content">
-                <Link href="/dashboard"><a style={{"fontSize":"15px"}}>Dashboard</a></Link>
+              {user.displayName != undefined ? 
+              <>
+                <Link href={"/user/"+user.displayName}><a style={{"fontSize":"15px"}}>Profile</a></Link>
+              </> :
+              <>
+               <Link href="/user/profile"><a style={{"fontSize":"15px"}}>Create Profile</a></Link>
+              </>}
+                {/* <Link href="/dashboard"><a style={{"fontSize":"15px"}}>Dashboard</a></Link> */}
                 <div className='drop-subsection'>
                   <Link href="/user/account"><a><i className="fa fa-gear" style={{"fontSize":"14px"}}></i>&nbsp; Settings</a></Link>
                   <button onClick={() => signOutUser()}><i className="fa fa-power-off" style={{"fontSize":"13px"}}></i>&nbsp; Logout</button>

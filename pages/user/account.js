@@ -36,7 +36,7 @@ export default function Account() {
       <br></br>
       <table>
         <tr>
-          <th><Link href="/user/accounts"><a style={{"fontWeight":"400"}} className="b-link">Accounts</a></Link></th>&nbsp;&nbsp;&nbsp;
+          <th><Link href="/user/account"><a style={{"fontWeight":"400"}} className="b-link">Accounts</a></Link></th>&nbsp;&nbsp;&nbsp;
           <th><Link href="/user/profile"><a style={{"fontWeight":"400"}} className="b-link">Profile Settings</a></Link></th>&nbsp;&nbsp;&nbsp;
           <th><Link href="/user/password_change"><a style={{"fontWeight":"400"}} className="b-link">Change Password </a></Link></th>
         </tr>
