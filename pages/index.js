@@ -74,12 +74,13 @@ const Home = ( {data} ) => {
           <p>Web3pedia, built-in 2022, is a one-stop-shop for all queries related to <Link href="/explore/article/web3"><a className="b-link">Web3</a></Link>.
           Our mission is to help people build on web3 by providing them everything in one place.&nbsp;<Link href="/about"><a className='b-link'>Read More</a></Link>
           </p>     
+          <br></br>
           <div className='get-started-btn'>
-            {user ?<><Link href='/dashboard'><a>Go to Dashboard 🚀</a></Link></>:<><Link href='/signup'><a>Get Started 🚀</a></Link></>}
+            {user ?<>{user.displayName !=undefined ? <><Link href={'/user/'+user.displayName}><a>View Profile 🚀</a></Link></>:<><Link href='/user/profile'><a>Create Profile 🚀</a></Link></>}</>:<><Link href='/signup'><a>Get Started 🚀</a></Link></>}
             
           </div>
           <br></br>
-          <a href='https://twitter.com/intent/follow?screen_name=Web3pedia_' target="_blank" title="twitter" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"24px","color":"#6B7280"}}></i></a>&nbsp;&nbsp;&nbsp;
+          <a href='https://twitter.com/Web3pedia_' target="_blank" title="twitter" rel="noreferrer"><i className="fa fa-twitter" style={{"fontSize":"24px","color":"#6B7280"}}></i></a>&nbsp;&nbsp;&nbsp;
           <a href='https://github.com/Web3pedia' target="_blank" title="Github" rel="noreferrer"><i className="fa fa-github" style={{"fontSize":"24px","color":"#6B7280"}}></i></a>&nbsp;&nbsp;&nbsp;
           {/* <a href='/saoji' title="Youtube"><i className="fa fa-linkedin" style={{"fontSize":"24px","color":"#6B7280"}}></i></a> */}
           </div>
