@@ -66,7 +66,7 @@ const  ArticlesContent = ( {data} ) => {
       <div className='articles-content'>
         <Link href='/explore'><a className='b-link'>Web3pedia Explore &gt;</a></Link>&nbsp;&nbsp;<Link href='/explore/articles'><a className='b-link'>Articles &gt;</a></Link>
         <h2>{data.title}</h2>
-        <p style={{"whiteSpace":"pre-line"}}>{data.content.replaceAll('\\n','\n')}</p>
+        <div style={{"whiteSpace":"pre-line"}} dangerouslySetInnerHTML={{__html:data.content}}></div>
         <a href='https://forms.gle/NrNGBusMu93Lf9r59' className='b-link' target="_blank" rel="noreferrer">Suggest Edits</a>
         <br></br>
       <br></br>
@@ -96,3 +96,5 @@ const  ArticlesContent = ( {data} ) => {
 }
 
 export default ArticlesContent
+
+// https://www.pluralsight.com/guides/return-html-elements-in-json
