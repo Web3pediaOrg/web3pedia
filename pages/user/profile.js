@@ -245,7 +245,7 @@ function addWeb3Project(e) {
           {/* <br></br>
           <span style={{"fontWeight":"500","color":"#22222F"}}>Registered email</span><br></br>{user.email} {user.emailVerified ? <><span style={{"color":"#248f24","cursor":"pointer"}} title="Email Verified">&#10004;</span></>:<><span style={{"color":"#cc0000","fontWeight":"600","cursor":"pointer"}} title="Email Not Verified"><i>X</i></span></>} */}
           <br></br>
-          Let's create your web3pedia profile!
+          Let&apos;s create your web3pedia profile!
           <br></br>
           <br></br>
               <form onSubmit={setUserName}>
