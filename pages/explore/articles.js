@@ -29,25 +29,25 @@ const ExploreArticles = ( {data} ) => {
       <div className='explore-main'>
         <br></br>
         <span className='explore-head'>Articles</span>&nbsp;&nbsp;<a href='https://forms.gle/NrNGBusMu93Lf9r59' target="_blank" rel="noreferrer" className='b-link'>Suggest / Add</a><br></br><br></br>
-        <br></br>
-        <span className='explore-subhead'>Latests</span><br></br>
+        {/* <br></br> */}
+        {/* <span className='explore-subhead'>Latests</span><br></br>
         <br></br>
         {data.latest.map((article) => {
           return (
             <>
-            <Link href={"/explore/article/"+article.id} key={article.id}><a className="b-link">{article.topic}</a></Link><br></br>
+            <Link href={"/explore/article/"+article.id} key={article.id}><a className="article-link">{article.topic}</a></Link><br></br><br></br>
             </>
           )
-        })}
-        <br></br>
+        })} */}
+        {/* <br></br>
         <br></br>
         <span className='explore-subhead'>All Articles</span><br></br>
-        <br></br>
-        <Link href="/explore/article/web3"><a className="b-link">What is Web3?</a></Link><br></br>
+        <br></br> */}
+        <Link href="/explore/article/web3"><a className="article-link">What is Web3?</a></Link>
         {data.articles.map((article) => {
           return (
             <>
-            <Link href={"/explore/article/"+article.id} key={article.id}><a className="b-link">{article.topic}</a></Link><br></br>
+            <Link href={"/explore/article/"+article.id} key={article.id}><a className="article-link">{article.topic}</a></Link>
             </>
           )
         })}

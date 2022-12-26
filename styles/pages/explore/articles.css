@@ -2,3 +2,63 @@
     margin: auto;
     width: 80%;
 }
+
+.paginav{
+    border-radius:5px;
+    background:#f2f2f2;
+    border:1px solid #f2f2f2;
+    margin: auto;
+    width: 75%;
+    /* padding: 10px; */
+}
+
+.paginav a {
+    padding: 10px;
+}
+
+.paginav a:hover{background:#e6e6e6}
+.paginav{margin:10px 0;display:flex;line-height:30px;border-radius:5px}
+.paginav a{padding-inline-start:14px;padding-inline-end:14px;border-radius:5px}
+.paginav .title{letter-spacing:1px;text-transform:uppercase;font-size:small;color:gray}
+.paginav .prev,.paginav .next{width:50%}
+.paginav span:hover:not(.title){box-shadow:0 1px}
+.paginav .next{margin-inline-start:auto;text-align:right}[dir=rtl] 
+.paginav .next{text-align:left}
+
+.ar-title {
+    font-size: 18px;
+}
+.prev-next-control {
+    /* background-color: black; */
+    margin: auto;
+    width: 80%;
+}
+
+.prev-next-control a {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.next-btn {
+    float: right;
+}
+
+.explore-subhead {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.article-link {
+    display: block;
+    border: 1px solid #666666;
+    border-radius: 3px;
+    width: 39%;
+    padding: 7px;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}
