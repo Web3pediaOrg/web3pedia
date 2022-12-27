@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import DocsBase from '../../components/DocsBase'
+import Base from '../../components/base'
 
 export default function Docs() {
   return (
@@ -10,8 +10,9 @@ export default function Docs() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="shortcut icon" href="./public/favicon.png" />
       </Head>
-      <DocsBase></DocsBase>
-      <div className='docs-main'>
+      <Base></Base>
+      <br></br>
+      <div className='main-2'>
         <div className='docs-path'>
           <Link href="/docs"><a>Docs</a></Link> &gt; <Link href="/docs/faq"><a>Faq</a></Link>
         </div>

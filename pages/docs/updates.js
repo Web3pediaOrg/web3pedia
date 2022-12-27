@@ -12,7 +12,7 @@ export default function Updates() {
       </Head>
       <Base></Base>
       <br></br>
-      <div className='docs-main'>
+      <div className='main-2'>
         <div className='docs-path'>
           <Link href="/docs"><a>Docs</a></Link> &gt; <Link href="/docs"><a>Updates</a></Link>
         </div>
