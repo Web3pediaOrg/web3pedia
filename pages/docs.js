@@ -14,7 +14,7 @@ export default function Docs() {
       <br></br>
       <br></br>
       <div className='main-2'>
-        <span className='build-cat-head'>Web3pedia Docs</span><br></br>
+        <span className='docs-cat-head'>Web3pedia Docs</span><br></br>
 
         <div className='docs-content'>
 

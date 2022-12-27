@@ -79,3 +79,8 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.docs-cat-head {
+    font-size: 30px;
+    font-weight: 500;
+} 
