@@ -13,6 +13,9 @@ const  ArticlesContent = () => {
         <meta name="description" content="Helping People With Web3" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Allerta&display=swap" rel="stylesheet" />
       </Head>
     <Base></Base>
     <br></br>
@@ -69,7 +72,7 @@ const  ArticlesContent = () => {
         <span className='ar-title'>Proof Of Stake</span>
       </a>
       </Link>
-      <Link href="/explore/article/DAO"><a className="next">
+      <Link href="/explore/article/dao"><a className="next">
         <span className="title">Next Page »</span>
         <br></br>
         <span className='ar-title'>DAO (Decentralized Autonomous Organization)</span>
