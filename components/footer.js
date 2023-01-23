@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import logo from "../public/images/W_2.png"
+import logo from "../public/images/web3p-logo.png"
 import Image from 'next/image'
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className='row'>
           <div className='footer-col'>
             <h4></h4>
-            <Image src={logo} alt="Web3pedia Logo" width="100%" height="80%"></Image><br></br>
+            <Image src={logo} alt="Web3pedia Logo" width="120%" height="90%"></Image><br></br>
             <span style={{"fontSize":"24px","fontWeight":"500"}}>Web3pedia</span>
           </div>
             <div className='footer-col'>
@@ -26,7 +26,7 @@ export default function Footer() {
               <ul>
                 <li><a href='https://twitter.com/Web3pedia_' target="_blank" rel="noreferrer">Twitter</a></li>
                 {/* <li><a href=''>Youtube</a></li> */}
-                <li><a href=''>Blog <span style={{"color":"#6B7280","fontSize":"12px"}}>(coming soon!)</span></a></li>
+                {/* <li><a href=''>Blog <span style={{"color":"#6B7280","fontSize":"12px"}}>(coming soon!)</span></a></li> */}
               </ul>
             </div>
             <div className='footer-col'>

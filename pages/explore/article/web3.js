@@ -12,10 +12,6 @@ const  ArticlesContent = () => {
         <title>Web3 | Web3pedia Articles</title>
         <meta name="description" content="Helping People With Web3" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=Allerta&display=swap" rel="stylesheet" />
       </Head>
     <Base></Base>
     <br></br>
@@ -23,6 +19,7 @@ const  ArticlesContent = () => {
       <Link href='/explore'><a className='b-link'>Web3pedia Explore &gt;</a></Link>&nbsp;&nbsp;<Link href='/explore/articles'><a className='b-link'>Articles &gt;</a></Link>
       <h2>What is Web3?</h2>
       <p>
+        Web3 refers to the third generation of the World Wide Web, characterized by the use of decentralized technologies such as blockchain and smart contracts to enable more secure and autonomous online interactions. Web3 technologies enable users to interact with decentralized applications (dApps) and make transactions without the need for a central intermediary, such as a bank or government. This allows for greater privacy, security, and censorship-resistance on the internet.
         <h3>The Evolution of the Web</h3>
         The web has evolved a lot over the years, and the applications of it today are almost unrecognizable from its most early days. The evolution of the web is often partitioned into three separate stages: Web 1.0, Web 2.0, and Web 3.0.
         <h3>What is Web 1.0?</h3>

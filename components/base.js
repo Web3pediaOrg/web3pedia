@@ -39,11 +39,27 @@ export default function Base() {
               <button className="dropbtn">Products&nbsp; 
                 <i className="fa fa-caret-down"></i>
               </button>
-              <div className="dropdown-content">
-                <Link href="/explore" replace><a className="drop-content-2">Explore</a></Link>
-                {/* <Link href="/build" replace><a className="drop-content-2">Build</a></Link> */}
+              <div className="mega-dropdown-content"> 
+                <div className="mega-row">
+                  <div className="mega-column">
+                    <div className='mega-header'>Explore</div>
+                      <Link href="/explore/articles" replace><a>Articles</a></Link>
+                      <Link href="/explore/courses" replace><a>Courses</a></Link>
+                      <Link href="/explore/events" replace><a>Events</a></Link>
+                      <Link href="/explore/hackathons" replace><a>Hackathons</a></Link>
+                    {/* <a href="#">Articles</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Events</a>
+                    <a href="#">Hackathons</a> */}
+                  </div>
+                </div>
               </div>
+              {/* <div className="dropdown-content">
+                <Link href="/explore" replace><a className="drop-content-2">Explore</a></Link>
+                <Link href="/build" replace><a className="drop-content-2">Build</a></Link>
+              </div> */}
             </div>
+
             <Link href="/docs"><a>Docs</a></Link>
             <Link href="/about"><a>About</a></Link>
             <Link href="/support"><a>Support</a></Link> 

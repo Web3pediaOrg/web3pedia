@@ -52,6 +52,8 @@ const ExploreArticles = ( {data} ) => {
           )
         })}
         </div>
+        <br></br>
+        <br></br>
     </>
      
      
